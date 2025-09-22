@@ -48,17 +48,17 @@ class Linkedlist
 }
 class Sample3
 {
- public static void main(String s[])
- {
-  	Linkedlist l1=new  Linkedlist();
-  	l1.insert(00);
-  	l1.insert(10);
-  	l1.insert(20);
-  	l1.insert(30);
-  	l1.insert(40);
-  	l1.insert(50);
-  	l1.insert(60);
-	
-  	l1.show();
- }
+	public static void main(String s[])
+    {
+  		Linkedlist l1=new  Linkedlist();
+  		l1.insert(00);
+  		l1.insert(10);
+  		l1.insert(20);
+  		l1.insert(30);
+  		l1.insert(40);
+  		l1.insert(50);
+  		l1.insert(60);
+		System.out.println("LinkedList elements are:");
+		l1.show();
+ 	}
 }
