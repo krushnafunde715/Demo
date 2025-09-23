@@ -75,7 +75,7 @@ class Stack
         int min=stackArray[0];
         for(int i=0; i<=top; i++)
         {
-            if(stackArray[i]<min)
+            if(stackArray[i]<=min)
             {
                 min=stackArray[i];
             }
@@ -87,7 +87,7 @@ class Stack
         int max=stackArray[0];
         for(int i=0; i<=top; i++)
         {
-            if(stackArray[i]>max)
+            if(stackArray[i]>=max)
             {
                 max=stackArray[i];
             }
