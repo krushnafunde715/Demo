@@ -8,7 +8,7 @@ class Queue
     Queue(int size)
     {
         maxSize=size;
-        QueueArray=new int [maxSize];
+        QueueArray=new int[maxSize];
         front=0;
         rear=-1;
         count=0;
@@ -17,27 +17,29 @@ class Queue
     {
         if(rear==maxSize-1)
         {
-            System.out.println("Queue is fulled");
+            System.out.println("Queue is full cant add element");
         }
-        else{
+        else
+        {
             rear=(rear+1)%maxSize;
             QueueArray[rear]=value;
-            System.out.println(value+"is added in Queue");
+            System.out.println(value+"is added");
             count++;
         }
+        
     }
     public void deQueue()
     {
         if(rear==-1)
         {
-            System.out.println("Queue is empty");
+            System.out.println("Queue is empty cant remove element");
         }
-        else{
-            System.out.println("\n"+QueueArray[front]+"is served");
+        else
+        {
+            System.out.println(QueueArray[front]+"is deleted");
             front=(front+1)%maxSize;
             count--;
         }
-        
     }
     public void display()
     {
@@ -45,32 +47,84 @@ class Queue
         {
             System.out.println("Queue is empty");
         }
-        else{
+        else
+        {
             System.out.println("Queue elements are:");
-            for(int i=0;i<count;i++)
+            for(int i=0; i<count; i++)
             {
-                int index= (front+i)%maxSize;
+                int index=(front+i)%maxSize;
                 System.out.print(QueueArray[index]+"\t");
             }
+            System.out.println();
         }
     }
-    
+    public void maxValue()
+    {
+        if(rear==-1)
+        {
+            System.out.println("Queue is empty");
+        }
+        else
+        {
+            int max=QueueArray[front];
+            for(int i=0; i<count; i++)
+            {
+                if(QueueArray[i]>=max)
+                {
+                    max=QueueArray[i];
+                }
+            }
+            System.out.println(max+"is the maximum value");
+        }
+    }
+    public void minValue()
+    {
+        if(rear==-1)
+        {
+            System.out.println("Queue is empty");
+        }
+        else
+        {
+            int min=QueueArray[front];
+            for(int i=0; i<count; i++)
+            {
+                if(QueueArray[i]<=min)
+                {
+                    min=QueueArray[i];
+                }
+            }
+            System.out.println(min+"is the minimum value");
+        }
+    }
+    public boolean isFull()
+    {
+        return(rear==maxSize-1);
+    }
+    public boolean isEmpty()
+    {
+        return(rear==-1);
+    }
 }
-public class QueueDemo
+class QueueDemo
 {
-	public static void main(String[] args) {
-		Queue q1= new Queue(5);
-		
-		q1.enQueue(10);
-		q1.enQueue(20);
-		q1.enQueue(30);
-		q1.enQueue(40);
-		q1.enQueue(50);
-		q1.enQueue(60);
-		q1.display();
-		q1.deQueue();
-		q1.deQueue();
-		q1.deQueue();
-		q1.display();
-	}
+    public static void main(String s[])
+    {
+        Queue c1= new Queue(5);
+        c1.enQueue(10);
+        c1.enQueue(50);
+        c1.enQueue(30);
+        System.out.println(c1.isFull());
+        c1.enQueue(20);
+        c1.enQueue(40);
+        c1.enQueue(60);
+        c1.maxValue();
+        c1.minValue();
+        c1.display();
+        c1.deQueue();
+        c1.deQueue();
+        c1.deQueue();
+        System.out.println(c1.isEmpty());
+        c1.display();
+    }
 }
+
