@@ -67,5 +67,7 @@ public class CustomerID2
 		{
 			System.out.println("Customer id found:"+x);
 		}	
+		sc.close();
 	}
 }
+//binary search
