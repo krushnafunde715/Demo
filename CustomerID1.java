@@ -39,3 +39,4 @@ public class CustomerID1
 		sc.close();
 	}
 }
+//Linear search
